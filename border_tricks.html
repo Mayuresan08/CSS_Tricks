@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{  
+           margin: 0;
+            box-sizing: border-box;
+           
+        }
+        /* BUBBLE */
+        .bubble{
+         height: 30rem;
+         background-color: black; 
+         position: relative;  
+        }
+        .bubble::before{
+            content: "";
+            position: absolute;
+            bottom: 0;
+            height: 20rem;
+            width: 100%;
+            border-top-left-radius: 50% 100%;
+            border-top-right-radius: 50% 100%;
+
+            background-color: red;
+        }
+        h1{
+            color: white;
+            text-align: center;
+            position: relative;
+            top: 50%;
+            z-index: 3;
+        }
+
+        /* wavy border */
+        .wavy{
+            height: 250px;
+         background-color: red; 
+         position: relative; 
+         
+        }
+
+        .wavy::before{
+            content: "";
+            position: absolute;
+            background-color: blue;
+            width: 55%;
+        height: 100%;
+        transform: translate(85%, 60%);
+        border-radius: 100% 50%;
+        overflow: hidden;
+      
+        }
+        .wavy::after{
+            content: "";
+            position: absolute;
+            width: 55%;
+             height: 100%;
+           background-color: red;
+            transform: translate(-4%, 30%);
+            border-radius: 100% 50%;
+           z-index: 2;
+        }
+
+        /* slant */
+        .slant{
+            height: 250px;
+         background-color: blue; 
+         position: relative;
+         z-index: 1;
+         /* the below method is not supported in all browsers */
+         /* clip-path: polygon(0 0, 100% 0, 100% 90%, 0 80%); */
+        }
+
+        .slant::after{
+            background: blue;
+            position: absolute;  
+            bottom: 0%;
+            left: 0;
+            right: 0;
+             content: '';
+             display: block;
+             height: 50%;            
+                       /* use skewY or rotate(-3deg) skew(-3deg)*/
+            transform: skewY( -3deg) ;
+            /* change the point of origin of a transform. 100% at Y=100% */
+            transform-origin: 100%;
+              z-index: -1;
+        }
+
+
+        /*without transform-origin use some values for bottom
+         .slant::after{
+            background: inherit;
+            background-color: green;
+            bottom: -10%;
+             content: '';
+             display: block;
+             height: 50%;
+             left: 0;
+             position: absolute;
+             right: 0;
+            transform: rotate(-3deg) skew(-3deg);
+              z-index: 1;
+        } */
+   
+    </style>
+</head>
+<body>
+    <section class="bubble">
+        <h1 class="inline">Bubble </h3>
+    </section>
+    <section class="wavy">
+        <h1 class="inline">wavy </h3>
+    </section>
+    <section class="slant">
+        <h1 class="inline">Slant </h3>
+    </section> 
+    <div style="background-color: black;height: 150px;"> </div>
+   
+</body>
+</html>

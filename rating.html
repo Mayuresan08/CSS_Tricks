@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+ <style>
+body{
+    background-image: linear-gradient(45deg,rgb(235, 42, 42),blue);
+    background-repeat: no-repeat;
+    height: 97.5vh;
+    }
+    .container{
+        display: flex;
+      justify-content: center;
+      align-items: center;
+      height:100vh;
+    }
+    .stars{
+      direction: rtl;
+        border: 1px solid black;
+        background-image: linear-gradient(45deg,rgb(209, 195, 195),rgb(0, 0, 0));
+        border-radius: 2px;
+        padding: 2rem;
+    }
+    button{
+        background-color: transparent;
+        border:none
+    }
+    i{
+        font-size: 3rem;
+    }
+    h2{
+        text-align: center;
+        direction: ltr;
+    font-size: 3rem;
+    }
+    /* button:hover,
+    .star1:hover ~ .star,
+    .star2:hover ~ .star,
+    .star3:hover ~ .star,
+    .star4:hover ~ .star,
+    .clicked,
+    .clicked ~ .star
+    {
+      color: red;
+    } */
+    button:hover{
+        color: red;
+    }
+    .star1:hover ~ .star{
+      color: red;
+    }
+    .star2:hover ~ .star{
+      color: red;
+    }
+    .star3:hover ~ .star{
+      color: red;
+    }
+    .star4:hover ~ .star{
+      color: red;
+    }
+    .clicked{
+      color:red
+    }
+    .clicked ~ .star{
+      color:red
+    }
+  </style>
+</head>
+<body>
+    <div class="container">
+        
+  <div class="stars">
+  <button class="star star1" onclick="setColor(this)"><i class="fas fa-fire-alt"></i></button>
+  <button class="star star2" onclick="setColor(this)"><i class="fas fa-fire-alt"></i></button>
+  <button class="star star3" onclick="setColor(this)"><i class="fas fa-fire-alt"></i></button>
+  <button class="star star4" onclick="setColor(this)"><i class="fas fa-fire-alt"></i></button>
+  <button class="star star5" onclick="setColor(this)"><i class="fas fa-fire-alt"></i></button>
+</div>
+</div>
+<script>
+function setColor(a)
+{
+let all=document.getElementsByClassName("star")
+for(i=0;i<5;i++)
+{
+  all[i].classList.remove("clicked")
+}
+  a.classList.add("clicked")
+}
+</script>
+</body>
+</html>
