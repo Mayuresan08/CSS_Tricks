@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Icons</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./style.css">
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.title {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 3em;
+}
+.socialicons {
+    display: flex;
+    margin-top: 100px;
+}
+.socialicons .icon{
+    width: 80px;
+    height: 80px;
+    box-shadow: 0 0 5px 10px rgba(0,0,0,0.05);
+    margin: 0 30px;
+    text-align: center;
+    line-height: 80px;
+    font-size: 30px;
+    text-decoration: none;
+    color: #000;
+    border-radius: 50%;
+    position: relative;
+    /* the color fill effect can be observed by commenting overflow:hidden */
+    overflow: hidden;
+}
+.icon:after {
+    content: '';
+    width: 80px;
+    height: 80px;
+    z-index: -1;
+    position: absolute;
+    bottom: -80px;
+    left: 0;
+    
+    background: linear-gradient(to bottom, rgb(158, 0, 231), rgb(57,1,211));
+    transition: 0.2s;
+}
+.socialicons .icon:hover {
+    color: #fff;
+}
+a:hover::after {
+    bottom: 0;
+}
+</style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <h2 class="title">Social Media Icons</h2>
+        <div class="socialicons">
+            <a href="#" title="Facebook" class="icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" title="Twitter" class="icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" title="Instagram" class="icon"><i class="fab fa-instagram"></i></a>
+            <a href="#" title="GitHub" class="icon"><i class="fab fa-github"></i></a>
+            <a href="#" title="LinkedIn" class="icon"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </div>
+</body>
+
+</html>
